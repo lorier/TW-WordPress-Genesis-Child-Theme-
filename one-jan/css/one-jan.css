@@ -1,0 +1,358 @@
+/*
+	Theme Name: One Jan
+	Description: This is the CSS for the homepage of One Jan.
+	Author: Jan Hoek
+	Author URI: http://www.janhoek.com/
+	Version: 2.0.1
+ 
+	Tags: one page, single page, full-width-template
+ 
+	Template: genesis
+	Template Version: 2.0.1
+ 
+	License: GPL-2.0+
+	License URI: http://www.opensource.org/licenses/gpl-license.php
+*/
+
+
+body.home .wrapper {
+	clear: both;
+	overflow: auto;
+} 
+
+@media only screen and (min-width: 1023px) {
+	.section {
+		min-height: 900px;
+	}
+}
+
+/* One Jan Wrap 
+--------------------------------------------- */
+body.home .site-inner,
+body.home .site-inner .wrap {
+	margin: 0 auto;
+	max-width: 100%;
+}
+
+body.home .wrapper {
+	padding: 10% 0;
+}
+
+body.home #portfolio.wrapper {
+	padding-top: 0 !important;
+}
+
+body.home .section .wrap {
+	max-width: 1140px;
+	text-align: center;
+}
+
+
+body.home .section#portfolio .wrap {
+	max-width: 100%;
+}  
+
+/* One Jan site-header 
+--------------------------------------------- */
+
+body.home .site-header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+	-webkit-box-shadow: 1px 1px 10px rgba(50, 50, 50, 0.1);
+	-moz-box-shadow:    1px 1px 10px rgba(50, 50, 50, 0.1);
+	box-shadow:         1px 1px 10px rgba(50, 50, 50, 0.1);
+}
+
+body.home .site-header .title-area {
+	padding-top: 25px;
+}
+
+/* One Jan Sections 
+--------------------------------------------- */
+
+
+body.home .section {
+	background-attachment: fixed;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover !important;
+	-moz-background-size: cover !important;
+	-o-background-size: cover !important;
+	background-size: cover !important; 
+}
+
+/* One Jan Styling
+--------------------------------------------- */
+
+body.home .section h1 {
+	font-size: 60px;
+	text-transform: uppercase;
+	color: #f7f7f7;
+}
+
+body.home .section header.home-title {
+	display: none;
+}
+
+/* One Jan About
+--------------------------------------------- */
+
+body.home .section#about {
+	background-color: #18A5B3;
+	color: #65BFC4;
+}
+
+/* One Jan Service
+--------------------------------------------- */
+
+body.home .section#service .left,
+body.home .section#service .right {
+	-webkit-animation-duration: 1s;
+	-ms-animation-duration: 1s;
+	animation-duration: 1s;
+}
+
+body.home .section#service .one-half {
+	background-color:rgba(88,88,88,0.5);
+	border-radius: 6px;
+	
+}	
+
+body.home .section#service .service-inner {
+	color: #DCFFF9;
+	padding: 3% 5%;
+	font-size: 18px;
+	
+}
+
+body.home .section#service h2 {
+	color: #fff;
+}
+
+body.home .section#service p.mycode {
+	color: #fff;
+	font-weight: 500;
+	font-size: 14px;
+	text-transform: uppercase;
+}
+
+
+body.home .section#service .service1:before {
+	content: "\f121";
+	font-family: 'FontAwesome';
+	color: #b4dfd9;
+	font-size: 90px;
+}
+
+body.home .section#service .service2:before {
+	content: "\f13b";
+	font-family: 'FontAwesome';
+	color: #b4dfd9;
+	font-size: 90px;
+}
+
+
+/* One Jan Portfolio
+--------------------------------------------- */
+
+body.home .section#portfolio .portfolio-section .page,
+body.home .section#portfolio .portfolio-section .post {
+	float: left;
+	overflow: hidden;
+	width: 33.3333%;
+	margin:0;
+	padding: 0;
+	line-height: normal;
+}
+
+body.home .section#portfolio .portfolio-section .page img.alignnone,
+body.home .section#portfolio .portfolio-section .post img.alignnone {
+	margin: 0;
+	padding: 0;
+	-webkit-animation-duration: 2s;
+	-ms-animation-duration: 3s;
+	animation-duration: 3s;
+	-webkit-animation-delay: 2s;
+	-ms-animation-delay: 2s;
+ 	animation-delay: 2s;	
+}
+
+/* One Jan Blog 
+--------------------------------------------- */
+
+body.home .section#blog .featured-content {
+}
+
+body.home .section#blog .featured-content .entry {
+	float: left;
+	width: 31.623931623931625%;
+	margin-bottom: 15px;
+	margin-left: 2.564102564102564%;
+	padding: 2% 2%;
+}
+
+body.home .section#blog .featured-content .entry:nth-of-type(3n+1) {
+	clear: left;
+	margin-left: 0;
+}
+
+body.home .section#blog .featured-content img {
+	margin-bottom: 15px;
+}
+
+/* One Jan Contact 
+--------------------------------------------- */
+
+body.home .section#contact {
+	background-color: #d5511e;
+}
+
+body.home .section#contact h1 {
+	margin: 40px 0;	
+}
+
+body.home .section#contact .section-inner {
+	text-align: center;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 200;
+	min-height: 200px;
+}
+
+body.home .section#contact .section-inner span.cline {
+	border-top: 1px #F27C61 solid;
+	padding-top: 30px;
+	color: #F27C61;
+}
+
+body.home .section#contact .section-inner span.address:before {
+	font-family: 'FontAwesome';
+	content: "\f015";
+	margin-right: 15px;
+}
+
+body.home .section#contact .social-section {
+	padding-top: 50px;
+}
+
+/* One Jan Animations CSS
+--------------------------------------------- */
+
+.section#about h1 .animated.bounceInDown {
+  -webkit-animation-duration: 2s;
+  -ms-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+.section#about h1 .animated.fadeOut {
+  -webkit-animation-duration: 2s;
+  -ms-animation-duration: 2s;
+  animation-duration: 2s;
+   -webkit-animation-delay: 3s;
+  -ms-animation-delay: 3s;
+  animation-delay: 3s;
+}
+
+.section#about img.animated {
+  -webkit-animation-duration: 2s;
+  -ms-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-delay: 2s;
+  -ms-animation-delay: 2s;
+  animation-delay: 2s;
+}
+
+@media only screen and (max-width: 1139px) {
+	
+	body.home .site-inner, .wrap {
+		max-width: inherit;
+	}
+	
+	
+	body.home .section .section-inner {
+		padding-left: 2%;
+		padding-right: 2%;
+	}
+	
+	body.home .section#portfolio .section-inner {
+		padding: 0 0;
+	}
+}
+
+@media only screen and (max-width: 1023px) {
+
+	body.home .site-inner {
+		padding: 0 !important;
+	}
+	
+	.section#blog .featured-content .entry {
+		width: 420px;
+		padding: 3%;
+	}
+	
+	.header-image .site-header .wrap {
+		background-position: center top;
+	}
+	
+	body.home .section#blog .featured-content .entry {
+		width: 100%;
+		margin: 0;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	
+	body.home .site-header {
+		position: relative;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+
+	.section#blog .featured-content{
+		padding: 0;
+		margin: 0;
+	}
+	
+	.section#blog .featured-content .entry {
+		margin: 0;
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	
+	body.home .section#service .one-half,
+	body.home .section#blog .featured-content .entry {
+		margin-bottom: 10px;
+	}
+	
+	body.home .section h1 {
+		font-size: 30px;
+	}
+	
+	body.home .section#portfolio .portfolio-section .page,
+	body.home .section#portfolio .portfolio-section .post {
+		width: 50%;
+	}
+}
+
+
+ 
+@media only screen and (max-width: 480px) {
+ 
+	
+	.section#portfolio .portfolio-section .page,
+	.section#portfolio .portfolio-section .post {
+		width: 100%;
+	}
+	
+	body.home .section#portfolio .portfolio-section .page,
+	body.home .section#portfolio .portfolio-section .post {
+		width: 100%;
+	}
+ 
+}
+
+
+

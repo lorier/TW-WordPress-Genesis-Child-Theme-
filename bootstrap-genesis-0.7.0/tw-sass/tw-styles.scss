@@ -1,0 +1,73 @@
+/*---Custom Styles Here---*/
+/* @imported into css/sass/style.scss for compiling via grunt */
+.navbar-header, .navbar-collapse, .navbar {
+    background-color: #4874e1;
+    border: none;
+}
+.navbar {
+    margin-bottom: 0;
+
+}
+.navbar-default .navbar-nav>a:after {
+    content: "<";
+}
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus{
+   background-color: #6690e9;
+}
+.navbar-default .navbar-nav>li>a,
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus {
+    color: white;
+
+}
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>.active>a:hover {
+       background-color: #6690e9;
+
+}
+
+//logo replacement via https://css-tricks.com/examples/ImageReplacement/
+#logo {
+    border: 0;
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+    width: 168px;
+    background: url('../tw-images/logo.png') no-repeat 0 0;
+    background-size: contain;
+}
+// #logo:before {
+//    content: url('../tw-images/logo.png');
+//    display: block;
+//    test
+// }
+#menu-main-nav {
+    float: right;
+}
+.jumbotron {
+    background: url('../tw-images/cat-in-box.jpg') no-repeat center center;
+    text-align: center;
+    height: 500px;
+    position: relative;
+
+}
+.main-cta {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+}
+.location-img {
+    width: 100%;
+}
+
+.acf-map {
+    width: 100%;
+    height: 400px;
+    border: #ccc solid 1px;
+    margin: 20px 0;
+}
