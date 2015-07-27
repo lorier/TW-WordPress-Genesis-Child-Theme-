@@ -22,13 +22,15 @@ function bsg_nav_menu_args_filter( $args ) {
         'primary' === $args['theme_location'] ||
         'secondary' === $args['theme_location']
     ) {
-        $args['depth'] = 2;
+        $args['depth'] = 1; //LR – changed this from 2 to 1 prevent the second level from showing
         $args['menu_class'] = 'nav navbar-nav';
         $args['fallback_cb'] = 'wp_bootstrap_navwalker::fallback';
-        $args['walker'] = new wp_bootstrap_navwalker();
+        //$args['walker'] = new wp_bootstrap_navwalker();
+        //LR - removed this because the parent link was being made inactive
+        //by the navwalker
     }
-
     return $args;
+
 }
 
 function bsg_nav_menu_markup_filter( $html, $args ) {
@@ -43,7 +45,7 @@ function bsg_nav_menu_markup_filter( $html, $args ) {
 
     $data_target = "nav-collapse" . sanitize_html_class( '-' . $args->theme_location );
     $output = <<<EOT
-    <div class="container-fluid">
+    <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#{$data_target}">

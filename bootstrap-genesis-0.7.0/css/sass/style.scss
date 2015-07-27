@@ -1,10 +1,20 @@
 /*
 * Sass (http://sass-lang.com/) file to generate theme.css
 */
+// $font-family-sans-serif:  "Open Sans", Helvetica, Arial, sans-serif !important;
+// $font-family-serif:       "Roboto Slab", Times, serif !default;
+
 
 /* Bootstrap Genesis Theme Variables
 ------------------------------------------------------------ */
 @import "supporting/variables";
+
+
+/* TW Vars
+* need to import these here to override boostrap vars
+------------------------------------------------------------ */
+@import "../../tw-sass/tw-sass-vars";
+
 
 /* Bootstrap Base 3.3.2
 ------------------------------------------------------------ */
@@ -59,3 +69,7 @@
 /* TW Custom SASS
 ------------------------------------------------------------ */
 @import "../../tw-sass/tw-styles";
+
+
+
+
