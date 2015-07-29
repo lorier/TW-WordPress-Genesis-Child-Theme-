@@ -31,7 +31,9 @@ function add_giant_header_image(){
     $output .= get_stylesheet_directory_uri();
     $output .= '/tw-images/hero-text.svg"/>
                 </div>
-            <div class="col-md-12 main-cta"><a href="#" class="btn btn-primary btn-lg">Why rent from us?</a>
+            <div class="col-md-12 main-cta"><a class="btn btn-primary btn-lg" href="';
+    $output .=  get_permalink();
+    $output .=  '/about_us">Why rent from us?</a>
             </div>
         </div>
     </div>

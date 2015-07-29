@@ -102,7 +102,7 @@ function be_section_menu() {
     if( !empty( $menu_items ) || ($locationsPage)) {
         echo '<div class="tw-submenu navbar-default">';
         echo '<div class="container">';
-        echo '<div class="collapse navbar-collapse navbar-ex1-collapse">';
+        echo '<div class="navbar-collapse navbar-ex1-collapse">';
         echo '<ul class="nav navbar-nav">';
         $first = true;
         //get the custom links for the Locations page and put them in a subnav

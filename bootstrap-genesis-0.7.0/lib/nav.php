@@ -25,7 +25,7 @@ function bsg_nav_menu_args_filter( $args ) {
         $args['depth'] = 1; //LR – changed this from 2 to 1 prevent the second level from showing
         $args['menu_class'] = 'nav navbar-nav';
         $args['fallback_cb'] = 'wp_bootstrap_navwalker::fallback';
-        //$args['walker'] = new wp_bootstrap_navwalker();
+        // $args['walker'] = new wp_bootstrap_navwalker();
         //LR - removed this because the parent link was being made inactive
         //by the navwalker
     }
