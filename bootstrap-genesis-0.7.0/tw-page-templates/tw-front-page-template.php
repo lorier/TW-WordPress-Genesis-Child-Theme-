@@ -52,55 +52,64 @@ function tw_add_location_boxes(){
     echo '<div class="row">';
 
     //find out if these 2 fields are set
+    $loc_1_title = get_field('location_1_title');
     $loc_1_image = get_field('loc_1_image');
-    $loc_1_post_object = get_field('loc_1_obj');
+    // $loc_1_post_object = get_field('loc_1_obj');
+    $loc_1_post_link = get_field('location_1_link_to');
+
+    $loc_2_title = get_field('location_2_title');
     $loc_2_image = get_field('loc_2_image');
-    $loc_2_post_object = get_field('loc_2_obj');
+    // $loc_2_post_object = get_field('loc_2_obj');
+    $loc_2_post_link = get_field('location_2_link_to');
 
     //if only one is set, we do 12 columns. If two, 6 columns
-    if( $loc_1_post_object && $loc_2_post_object ){
+    if( $loc_1_image && $loc_2_image ){
         $cols = 'col-md-6';
     }else{
         $cols = 'col-md-12';
     }
-        // override post object per http://www.advancedcustomfields.com/resources/post-object/
-        // this requires defining global $post at the begining of the fuction!
-        if($loc_1_post_object){
-            $loc_image = get_field('loc_1_image');
-            //override post
-            $post = $loc_1_post_object;
-            setup_postdata( $post );
-            if( !empty($post) ):
-            tw_print_loc_box($loc_image, $cols);
-            ?>
-           <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-            </div>
-            <?php endif;
-        };
-         if($loc_2_post_object){
-            $loc_image = get_field('loc_2_image');
-            //override post
-            $post = $loc_2_post_object;
-            setup_postdata( $post );
-            if( !empty($post) ):
-            tw_print_loc_box($loc_image, $cols);
-            ?>
-           <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-            </div>
-            <?php endif;
-        };
+    // override post object per http://www.advancedcustomfields.com/resources/post-object/
+    // this requires defining global $post at the begining of the fuction!
+    if($loc_1_image){
+        $loc_image = $loc_1_image;
+        $loc_title = $loc_1_title;
+        $link = $loc_1_post_link;
+        //override post
+        // $post = $loc_1_post_object;
+        // setup_postdata( $post );
+        // if( !empty($post) ):
+        tw_print_loc_box($loc_image, $link, $loc_title, $cols);
+        ?>
+        <?php //wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+        </div>
+        <?php //endif;
+    };
+     if($loc_2_image){
+        $loc_image = $loc_2_image;
+        $loc_title = $loc_2_title;
+        $link = $loc_2_post_link;
+        //override post
+        // $post = $loc_2_post_object;
+        // setup_postdata( $post );
+        // if( !empty($post) ):
+        tw_print_loc_box($loc_image, $link, $loc_title, $cols);
+        ?>
+       <?php //wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+        </div>
+        <?php //endif;
+    };
 
 
       echo '</div></div></div></div><!--end container-->';
 };
 
-function tw_print_loc_box($loc_image, $cols){
+function tw_print_loc_box($loc_image, $link, $title, $cols){
+    $loclink = get_permalink();
+    $loclink .= $link;
    ?> <div class="<?php echo $cols ?>">
             <div class="home-loc-boxes">
-            <a href="<?php get_permalink(); ?>">
-
-
-                <h3 class="location-link"><?php the_title(); ?><span class="glyphicon glyphicon-menu-right"></span></h3>
+            <a href="<?php echo $loclink; ?>">
+                <h3 class="location-link"><?php echo $title; ?><span class="glyphicon glyphicon-menu-right"></span></h3>
                 <img src="<?php echo $loc_image ?>">
                 </a>
             </div>  <?php
@@ -121,11 +130,11 @@ function tw_add_tertiary_boxes(){?>
         <div class="row ">
             <div class="col-md-5 col-md-offset-1 col-sm-6" id="unit-sizes">
                 <div><?php print_r(get_field('unit_sizes') );?></div>
-                <button class="btn btn-primary"><a href="<?php print_r(get_field('unit_sizes_link') );?>">  <?php print_r(get_field('unit_sizes_link_text') );?>  </a></button>
+               <a  class="btn btn-primary" href="<?php print_r(get_field('unit_sizes_link') );?>"><?php print_r(get_field('unit_sizes_link_text') );?>  </a>
             </div>
             <div class="col-md-5 col-sm-6" id="rates">
                 <div><?php print_r(get_field('rates') );?></div>
-                <button class="btn btn-primary"><a href="<?php print_r(get_field('chat_url') );?>">  <?php print_r(get_field('chat_link_text') );?>  </a></button>
+                <a href="#" class="btn btn-primary ClickdeskChatLink"> </a>
             </div>
 
         </div>

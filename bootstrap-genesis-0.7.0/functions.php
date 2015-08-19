@@ -23,6 +23,11 @@ function tw_sitewide_edits(){
     add_theme_support( 'genesis-menus', array( 'primary' => __( 'Primary Navigation Menu', 'genesis' ) ) );
 }
 
+/* Restrict the allowed number of revisions to 10 */
+add_filter( 'wp_revisions_to_keep', 'filter_function_name', 10, 2 );
+function filter_function_name( $num, $post ) {
+    return $num;
+}
 /* Include all php files in the /includes directory.
  * https://gist.github.com/theandystratton/5924570
  */
@@ -43,11 +48,11 @@ wp_register_style( 'google_fonts', add_query_arg( $query_args, "http://fonts.goo
 
 add_action('genesis_before', 'add_facebook_button_header');
 function add_facebook_button_header(){
-    echo '<a href="https://www.facebook.com/pages/AAAA-Mini-Storage/212538458854664" id="facebook-button-header"><img src="'.get_stylesheet_directory_uri().'/tw-images/facebook.svg"/></a>';
+    echo '<a href="https://www.facebook.com/pages/AAAA-Mini-Storage/212538458854664" id="facebook-button-header" target="_blank"><img src="'.get_stylesheet_directory_uri().'/tw-images/facebook.svg"/></a>';
 }
 add_action('genesis_before_footer', 'add_facebook_button_footer');
 function add_facebook_button_footer(){
-    echo '<a href="https://www.facebook.com/pages/AAAA-Mini-Storage/212538458854664" id="facebook-button-footer"><img src="'.get_stylesheet_directory_uri().'/tw-images/facebook.svg"/></a>';
+    echo '<a href="https://www.facebook.com/pages/AAAA-Mini-Storage/212538458854664" id="facebook-button-footer" target="_blank"><img src="'.get_stylesheet_directory_uri().'/tw-images/facebook.svg"/></a>';
 }
 
 

@@ -37,7 +37,9 @@ p a, li a, div>a, a:hover, a:visited {
     text-decoration: underline;
 }
 h1 {
-   font-size: 31px
+   font-size: 31px;
+   margin-top: 30px;
+   margin-bottom: 20px;
 }
 .btn {
     border-radius: 0;
@@ -352,14 +354,14 @@ footer {
     margin-bottom: 40px;
     h3 {
         position: absolute;
-      top: 25%;
-      left: 15%;
-      z-index: 10;
-      color: white;
-      font-size: 40px;
-      span {
-        font-size: 25px;
-      }
+        top: 22%;
+        left: 15%;
+        z-index: 10;
+        color: white;
+        font-size: 40px;
+        span {
+          font-size: 25px;
+        }
     }
     img {
         width: 100%;
@@ -374,13 +376,15 @@ footer {
     p {
         font-size: 20px;
     }
-    button {
+    a {
         margin-top: 15px;
         padding: 15px 25px;
-         a, a:hover, a:visited {
-            color: white;
-         }
+
      }
+      a, a:hover, a:visited {
+            color: white;
+            background-color: $aaaaRed;
+         }
 }
 
 #unit-sizes {
@@ -420,8 +424,26 @@ footer {
 }
 //Global visual composer overrides
 .vc_row {
-    // margin-left: 0 !important;
-    // margin-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+.vc_images_carousel .vc_inner {
+    img {width: 100% !important;}
+}
+.vc_carousel-control {
+    opacity: 1 !important;
+}
+.vc_carousel-control span {
+    color: white;
+    opacity: .8 !important;
+}
+.vc_images_carousel .vc_carousel-indicators li {
+    border-color: white !important;
+    background-color: white !important;
+    &.vc_active {
+        border-color: white !important;
+        background-color: transparent !important;
+    }
 }
 
 ////////////////////////////////////
@@ -554,13 +576,16 @@ strong>p {
             margin-bottom: 10px;
             @media ($screen-md-min){
             .wpb_column{
-                padding-left: 0;
+                //padding-left: 0;
             }
             }
         }
 
         .address-column {
-            padding: 0;
+            padding-right: 0;
+            @media (max-width: $screen-sm-max){
+                padding-right: 15px;
+            }
             h2 {
                 padding-top: 0;
                 margin-top: 0;
@@ -572,13 +597,34 @@ strong>p {
             .wpb_content_element {
                 margin-bottom: 0;
             }
+            .phone-email {
+                ul {
+                    list-style-type: none;
+                    padding-left: 0;
+                }
+                li {
+                    padding-left: 50px;
+                    margin-bottom: 10px;
+                    line-height: 37px;
+                }
+                li.phone {
+                    background: url("../tw-images/phone.svg") no-repeat left top;
+
+                }
+                li.email {
+                    background: url("../tw-images/email.svg") no-repeat left top;
+
+                }
+            }
         }
         .site-features, .unit-sizes {
             h5 {
                 margin-top: 0;
             }
             // padding: 0;
-
+            ul {
+                padding-left: 0;
+            }
             .wpb_content_element {
                 margin-bottom: 0;
             }
@@ -587,17 +633,28 @@ strong>p {
             list-style-type: none;
         }
         .site-features {
-            @media ($screen-md-min){
-                padding-left: 0;
+            @media (min-width: $screen-md-min){
+                //padding-left: 0;
+            }
+            @media (max-width: $screen-sm-min){
+                text-align: center
             }
         }
         .unit-sizes {
-            @media ($screen-md-min){
-                padding-left: 0;
+            @media (min-width:$screen-md-min){
+                //padding-right: 0;
+            }
+             @media (max-width: $screen-sm-min){
+                text-align: center
             }
             .wpb_row{
                 margin-bottom: 5px;
             }
+            .double-column{
+                margin-left: 0;
+                margin-right: 0;
+            }
+
         }
     .anchor-link {
 
@@ -622,4 +679,38 @@ strong>p {
     #ninja_forms_field_14_div_wrap {
         clear: left;
     }
+     .ninja-forms-required-items,
+     #ninja_forms_field_12_div_wrap {
+
+        padding-bottom: 8px;
+    }
+
+  }
+/*--ClickChat--*/
+.ClickdeskChatLink {
+    img {
+    visibility: hidden;
+    display: none
+    }
+    &::after {
+        content: 'Chat Now';
+    }
+}
+  .page-id-18 .ClickdeskChatLink {
+    img {
+    visibility: hidden;
+    display: none
+    }
+    &::after {
+        content: 'chat online now >';
+    }
+}
+.clickdesk_bubble {
+    display: none !important;
+}
+.clickdesk_chat #clickdesk_header .cd-chat-inner-top,
+.clickdesk_chat .cdw-chat-header,
+.clickdesk_chat .clickdesk-ultra input.cdw-chat-contact-send-button,
+.clickdesk_chat .clickdesk-ultra input.cdw-chat-contact-send-button:hover {
+    background-color: $aaaaBlue !important;
 }
