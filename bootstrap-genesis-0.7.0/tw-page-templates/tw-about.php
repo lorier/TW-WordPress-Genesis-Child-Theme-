@@ -25,8 +25,8 @@ function tw_add_testimonial_blocks(){
     echo '<div class="container"';
     echo '<div class="row">';
     echo '<h3>Testimonials</h3>';
-    echo '<div class="col-md-6">'.get_field('left_column').'</div>';
-        echo '<div class="col-md-6">'.get_field('right_column').'</div>';
+    echo '<div class="col-md-6 testimonials">'.get_field('left_column').'</div>';
+        echo '<div class="col-md-6 testimonials">'.get_field('right_column').'</div>';
     echo '</div></div></div>';
 }
 genesis();

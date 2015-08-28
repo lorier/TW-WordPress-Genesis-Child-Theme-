@@ -158,10 +158,10 @@ function tw_add_bill_pay(){?>
             <div class="col-md-5 col-sm-6">
                 <div class="row">
                     <div class="col-md-6 bp-content">
-                        <a href="#">Burien</a>
+                        <a href="https://aaaa-burien.sim.syrasoft.com/secure/payment.aspx" target="_blank">Burien</a>
                     </div>
                     <div class="col-md-6 bp-content">
-                        <a href="#">South Seattle</a>
+                        <a href="https://aaaa-seattle.sim.syrasoft.com/secure/payment.aspx" target="_blank">South Seattle</a>
                     </div>
                 </div>
             </div>

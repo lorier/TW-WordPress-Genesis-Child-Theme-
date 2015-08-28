@@ -13,6 +13,8 @@ define( 'CHILD_THEME_VERSION', '0.0.1' );
 add_action( 'genesis_setup', 'tw_sitewide_edits', 16);
 /* giant function of all my edits */
 function tw_sitewide_edits(){
+    remove_action( 'genesis_meta', 'genesis_load_favicon' );
+    remove_action( 'wp_head', 'genesis_load_favicon' );
     remove_action( 'template_redirect', 'bsg_title_area_jumbotron_unit_on_front_page' );
     remove_filter('genesis_footer_creds_text', 'bsg_footer_creds_filter');
     add_filter ('genesis_footer_creds_text', 'tw_footer_creds_filter');
@@ -21,6 +23,37 @@ function tw_sitewide_edits(){
     remove_theme_support( 'genesis-inpost-layouts' );
     //unregister the secondary menu
     add_theme_support( 'genesis-menus', array( 'primary' => __( 'Primary Navigation Menu', 'genesis' ) ) );
+}
+
+add_action('genesis_meta', 'tw_load_favicons');
+function tw_load_favicons(){
+    $templateDir = get_stylesheet_directory_uri();
+    $output = <<<EOT
+    <link rel="Shortcut Icon" href="$templateDir/tw-images/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="$templateDir/tw-images/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="$templateDir/tw-images/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="$templateDir/tw-images/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="$templateDir/tw-images/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="$templateDir/tw-images/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="$templateDir/tw-images/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="$templateDir/tw-images/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="$templateDir/tw-images/apple-touch-icon-152x152.png" />
+<link rel="icon" type="image/png" href="$templateDir/tw-images/favicon-196x196.png" sizes="196x196" />
+<link rel="icon" type="image/png" href="$templateDir/tw-images/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="$templateDir/tw-images/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="$templateDir/tw-images/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="$templateDir/tw-images/favicon-128.png" sizes="128x128" />
+<meta name="application-name" content="&nbsp;"/>
+<meta name="msapplication-TileColor" content="#FFFFFF" />
+<meta name="msapplication-TileImage" content="mstile-144x144.png" />
+<meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+<meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+<meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+<meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+
+
+EOT;
+    echo $output;
 }
 
 /* Restrict the allowed number of revisions to 10 */
@@ -35,6 +68,12 @@ add_action( 'genesis_setup', 'bsg_load_lib_files', 15 );
 function bsg_load_lib_files() {
     foreach ( glob( dirname( __FILE__ ) . '/lib/*.php' ) as $file ) { include $file; }
 }
+define( 'ACF_LITE' , true );
+add_action( 'genesis_setup', 'tw_load_acf_files', 15 );
+function tw_load_acf_files() {
+    foreach ( glob( dirname( __FILE__ ) . '/tw-includes/advanced-custom-fields/*.php' ) as $file ) { include $file; }
+}
+
 
 //add fonts via http://premium.wpmudev.org/blog/custom-google-fonts/
 add_action('wp_enqueue_scripts', 'tw_google_fonts');
@@ -194,6 +233,7 @@ function tw_register_sidebars(){
         'after_title' => '</h4>',
         ) );
 };
+
 
 
 /* Enable LiveReload. Compatible with MAMP Source: http://robandlauren.com/2014/02/05/live-reload-grunt-wordpress/ */

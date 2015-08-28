@@ -48,8 +48,11 @@ h1 {
 a.btn {
     text-decoration: none;
 }
-.btn-primary, .btn-primary:hover, .btn-primary:hover, {
+.btn-primary, .btn-primary:visited  {
     background-color: $aaaaRed;
+}
+.btn-primary:hover {
+    background-color: $aaaaRedHover;
 }
 #facebook-button-header, #facebook-button-footer {
     position: relative;
@@ -198,6 +201,9 @@ a.btn {
                 // float: none;
             }
          }
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: inherit;
 }
 //Hide Dropdowns for desktop
     @media (min-width: $screen-sm-min) {
@@ -381,7 +387,7 @@ footer {
         padding: 15px 25px;
 
      }
-      a, a:hover, a:visited {
+      a {
             color: white;
             background-color: $aaaaRed;
          }
@@ -504,10 +510,14 @@ footer {
         right: 30px;
         margin-top: 0px;
         padding: 10px;
+        background-color:$aaaaRed;
         @media screen and (max-width: $screen-sm-max){
             display: none;
         }
     }
+     .download-button:hover {
+        background-color: $link-hover-color;
+     }
     .coupon-button {
         padding: 10px;
     }
@@ -562,6 +572,9 @@ strong>p {
         }
 
     }
+   .testimonials p {
+        padding-bottom: 18px;
+   }
 }
  //coupon page
      .vc-tw-content-area.center {
@@ -676,7 +689,8 @@ strong>p {
         float: left;
         padding-right: 15px;
     }
-    #ninja_forms_field_14_div_wrap {
+    #ninja_forms_field_14_div_wrap,
+    #ninja_forms_field_21_div_wrap {
         clear: left;
     }
      .ninja-forms-required-items,
