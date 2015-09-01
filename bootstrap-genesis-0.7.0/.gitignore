@@ -19,3 +19,4 @@ js/javascript.min.js
 # these are easily recreated on a new project
 # with `npm install`
 node_modules/
+sft-config.json
