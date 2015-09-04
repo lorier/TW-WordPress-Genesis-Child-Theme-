@@ -27,6 +27,11 @@ so that the font overrides work */
     @media (min-width: @screen-lg-min) { ... }
 
 */
+/***************hot fix for locations button weirdness******************/
+.home .locations-button.current-menu-parent a {
+    background-color: transparent;
+}
+/*********************************************************************/
 
 $font-family-sans-serif:  "Open Sans", Helvetica, Arial, sans-serif !important;
 $font-family-serif:       "Roboto Slab", Times, serif !default;
